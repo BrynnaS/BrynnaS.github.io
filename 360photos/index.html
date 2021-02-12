@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>A-Frame - Image Textures</title>
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+</head>
+
+ <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>   
+    
+<body>
+<a-scene antialias="true">
+	
+	<a-assets>
+		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
+		<img id="goldenroom" src="images/goldenroom.jpg" crossorigin="anonymous" />
+        <img id="market" src="images/market.jpg" crossorigin="anonymous" />
+        <img id="suburbs" src="images/suburbs.jpg" crossorigin="anonymous" />
+        <img id="vctroom" src="images/vctroom.jpg" crossorigin="anonymous" />
+
+	</a-assets>
+		
+	<a-sky 
+		color = "#FFFFFF"
+		material = "src: #sky">
+	</a-sky>
+    
+        <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>
+	
+      <a-box
+        position="-3 2 -4"
+        scale=".3 .3 .3"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #goldenroom"     
+      ></a-box>
+    
+          <a-box
+        position="2 2 4"
+        scale=".3 .3 .3"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #market"     
+      ></a-box> 
+    
+              <a-box
+        position="-4 2 3"
+        scale=".3 .3 .3"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #suburbs"     
+      ></a-box> 
+    
+              <a-box
+        position="4 2 -3"
+        scale=".3 .3 .3"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #vctroom"     
+      ></a-box> 
+	
+</a-scene>
+</body>
+</html>
